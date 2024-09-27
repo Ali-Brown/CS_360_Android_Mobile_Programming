@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.cs360_babatunde_alibrown_inventoryapp">
+
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.CS360_Babatunde_AliBrown_InventoryApp"
+        tools:targetApi="31" >
+        <activity
+            android:name=".NotificationActivity"
+            android:parentActivityName=".InventoryListActivity"
+            android:label="@string/notification_activity_label"
+            />
+        <activity
+            android:name=".EditItemActivity"
+            android:parentActivityName=".InventoryListActivity"
+            android:label="@string/edit_item_activity_label"
+            />
+        <activity android:name=".InventoryListActivity"
+            android:label="@string/inventory_activity_label"/>
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/login_activity_label"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
